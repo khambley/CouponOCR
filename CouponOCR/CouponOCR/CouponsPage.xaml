@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CouponOCR"
+             x:Class="CouponOCR.CouponsPage"
+             Title="CouponOCR">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding AddInvoiceCommand}" Text="Add" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ListView HasUnevenRows="True"
+                  ItemsSource="{Binding Invoices}"
+                  SeparatorVisibility="None"
+                  IsRefreshing="{Binding IsBusy, Mode=OneWay}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <local:CardViewCell Detail="{Binding Total}"
+                                        ImageSource="{Binding Photo}"
+                                        Text="{Binding TimeStamp}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
