@@ -14,7 +14,7 @@
                   IsRefreshing="{Binding IsBusy, Mode=OneWay}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <local:CardViewCell Detail="{Binding Total}"
+                    <local:CardViewCell Detail="{Binding ExpirationDate}"
                                         ImageSource="{Binding Photo}"
                                         Text="{Binding TimeStamp}" />
                 </DataTemplate>
